@@ -171,7 +171,7 @@ namespace Hankook_One_Upload
                 //and tihhdtechg between case when newDealer = 1 then cudealerstartdate else convert(date,DateAdd(day,-1,getdate())) end and getdate()
                 //order by m.inv_num";
 
-                myQuery = "EXEC DealerPrograms.dbo.up_Hankook_DailyUploads ";
+                myQuery = "EXEC Dealer_Programs.dbo.up_Hankook_DailyUploads ";
 
                 filePath = "C:\\" + "Scheduled Tasks\\Hankook One Upload\\Documents\\";
                 fileName = "205545-" + logFileYear.ToString() + logFileMonth.ToString() + logFileDay.ToString() + "-" + logFileHour.ToString() + logFileMinute.ToString() + ".csv";
@@ -240,8 +240,7 @@ namespace Hankook_One_Upload
             client.UseDefaultCredentials = false;
             client.Credentials = new System.Net.NetworkCredential("anonymous", "");
             Notification.From = new MailAddress(emailFrom);
-            Notification.To.Add(new MailAddress("oreifschneider@pompstire.com"));
-            Notification.CC.Add(new MailAddress("dbarrett@pompstire.com"));
+            Notification.To.Add(new MailAddress("devhelp@pompstire.com"));  
             Notification.Subject = emailSubject;
             Notification.IsBodyHtml = true;
             Notification.Body = msg;
